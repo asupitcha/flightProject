@@ -1,0 +1,39 @@
+<body ng-app="flightApp" ng-controller="flightCtrl">
+<h1>Result</h1>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a href="" class="nav-link active" data-toggle="tab">List View</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link" data-toggle="tab">Matrix View</a>
+    </li>
+</ul>
+</div>
+<div class="tab-content">
+    <div id="listview" class="container tab-pane active"><br>
+        <p id="total-result"></p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Price</th>
+                    <th>Airline</th>
+                    <th>Take-off</th>
+                    <th>Landing</th>
+                    <th>Stop(Duration)</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">${{resultTable}}</tbody>
+        </table>
+    </div>
+    <div id="matrixview" class="container tab-pane fade"><br>
+        Matrix view
+    </div>
+    <div id="page-number" class="pagination justify-content-center" style="margin:20px 0;">
+    </div>
+</div>
+<p>Results per page:
+    <select name="page" id="page">
+        <option value="pagevalue">5</option>
+    </select>
+</p>
+</body>

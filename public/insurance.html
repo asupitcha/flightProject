@@ -1,0 +1,103 @@
+<body ng-app=flightApp ng-controller="insuranceCtrl">
+    <div class="container">
+        <div class="row" >
+            <div class="col-sm-3 col-md-8" >
+                <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="border: none;">
+                    <div class="card-header" style="background: #F0F0F0; color: black;">
+                        ประกันภัยระหว่างการเดินทาง
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" ng-model="checkbox.bag"
+                                        value="bagInsu">ประกันกระเป๋าเดินทางหาย หรือ ล่าช้า
+                                    <p>(ราคา {{baggINsu}} บาท)</p>
+                                </label>
+                            </div>
+                            <img class="col-sm-6" src="./img/insurance.jpg" />
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6 form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" ng-model="checkbox.health"
+                                        value="healthInsu">ประกันอุบัติเหตุและสุขภาพ ระหว่างเดินทาง
+                                    <p>(ราคา {{healthhINsu}} บาท)</p>
+                                </label>
+                            </div>
+                            <img class="col-sm-6" src="./img/health.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="border: none;">
+                    <div class="card-header" style="background: #F0F0F0; color: black;">ค่าบริการอื่นๆเพิ่มเติม</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" ng-model="checkbox.move"
+                                        value="{{moveNotii}}">แจ้งเตือนเที่ยวบินเลื่อน
+                                    (ราคา {{moveNotii}} บาท)
+                                </label>
+                            </div>
+                            <br>
+                            <div class="col-sm-6 form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="{{smsNotii}}"
+                                        ng-model="checkbox.sms">แจ้งเตือน SMS
+                                    ก่อนเดินทาง (ราคา {{smsNotii}} บาท)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-md-4">
+                <div class="card" style="border-color: #F0F0F0;  border-radius: 10px; padding: 5px;">
+                    <div class="card-header" style="background: #F0F0F0; color: black;">ค่าบริการอื่นๆเพิ่มเติม</div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#flightD">&#8250; Flight: {{flightD}} บาท</a>
+                            <div id="flightD" class="collapse" style="padding: 15px;">
+                                ราคา
+                            </div>
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#taxD">&#8250; Tax: {{tax}} บาท</a>
+                            <div id="taxD" class="collapse">
+                                {{tax}}
+                            </div>
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#serviceD">&#8250; Service Fee: {{price()}} บาท</a>
+                            <div id="serviceD" class="collapse" ng-model="test">
+                                <pre>{{show()}}</pre>
+                            </div>
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#discountD">&#8250; Discount: {{discount}} บาท</a>
+                            <div id="discountD" class="collapse">
+                                {{discount}}
+                            </div>
+                            <br>
+                            <div>
+                                Total: {{totalPrice()}} บาท
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                
+                <button type="button" class="btn btn-success" style="padding-left: 25px;padding-right: 25px;" 
+                ng-click="changeRoute()">Next
+                    &#8250;</button>
+                <br><br>
+
+            </div>
+            
+            <br>
+        </div>
+        </div>
+
+    </div>
+    
+</body>

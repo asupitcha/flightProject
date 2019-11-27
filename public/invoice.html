@@ -1,0 +1,58 @@
+<body ng-app=flightApp ng-controller="insuranceCtrl">
+    <div>
+        <div class="media border p-3 " style=" margin-left:20%; margin-right:20%;  background-color: white;">
+            <div class="media-body" style="padding: 5%">
+                <h4>INVOICE</h4><br>
+                <p>Date: </p>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Detail</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>
+                                    <p>From: {{from}}</p>
+                                    <p>To: {{to}}</p>
+                                </td>
+                                <td>{{getData()}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <h3>ค่าประกัน</h3>
+                                        <p>{{show()}}</p>
+                                    </div>
+                                </td>
+                                <td>{{price()}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ค่าภาษี
+                                </td>
+                                <td>{{tax}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ส่วนลด
+                                </td>
+                                <td>-{{discount}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ยอดรวม
+                                </td>
+                                <td>{{totalPrice()}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>

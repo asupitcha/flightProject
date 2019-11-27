@@ -1,0 +1,50 @@
+<body ng-app="flightApp" ng-controller="flightCtrl">
+    <div class="container" style="padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-sm-4 order-md-1 order-sm-1 order-2 form-group">
+                <label for="flyfrom">Flying from</label>
+                <input type="text" class="form-control" id="flyfrom" ng-model="flyfrom" ng-blur="getDeparting()">
+            </div>
+            <div class="col-sm-4 order-md-2 order-sm-2 order-3 form-group">
+                <label for="flyto">Flying to</label>
+                <input type="text" class="form-control" id="flyto" ng-model="flyto" ng-blur="getReturning()">
+            </div>
+            <div class="col-sm-2 order-md-3 order-sm-3 order-1 radio">
+                <label><input type="radio" name="optradio"> One Way</label>
+                <label><input type="radio" name="optradio" checked> Round Trip</label>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-sm-4 form-group">
+                <label for="depart">Departing</label>
+                <select class="form-control" id="depart" ng-model="selectDepart" ng-options="x for x in optionDepart">
+                    <option>{{selectDepart}}</option>
+                </select>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="return">Returning</label>
+                <select class="form-control" id="return" ng-model="selectReturn" ng-options="x for x in optionReturn">
+                    <option>{{selectReturn}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 form-group">
+                <label for="adults">Adults</label>
+                <select class="form-control" id="adults" style="width:30%" ng-model="selectAdults"
+                    ng-options="x for x in optionAdults">
+                    <option>{{selectAdults}}</option>
+                </select>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="cabin">Cabin</label>
+                <select class="form-control" id="cabin" style="width:50%" ng-model="selectCabin"
+                    ng-options="x for x in optionCabin">
+                    <option>{{selectCabin}}</option>
+                </select>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="bbutton" ng-click="submit()">Search</button>
+    </div>
+</body>

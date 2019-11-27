@@ -1,0 +1,113 @@
+<body ng-app="flightApp" ng-controller="passengerCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-2 order-md-1 order-sm-1 order-2">
+                        <label for="flyfrom">Title</label>
+                        <select class="form-control" id="title" ng-model="selectTitle"
+                            ng-options="x for x in optionTitle" required>
+                            <option>{{selectTitle}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 order-md-1 order-sm-1 order-2">
+                        <label for="flyfrom">first name</label>
+                        <input type="text" class="form-control" id="fname" ng-model="fname">
+                    </div>
+                    <div class="col-sm-3 order-md-2 order-sm-2 order-3 ">
+                        <label for="flyto">last name</label>
+                        <input type="text" class="form-control" id="lname" ng-model="lname">
+                    </div>
+                    <div class="col-sm-4 order-md-4 order-sm-4 order-1">
+                        <label for="flyto">Birth Date</label><br>
+                        <div class="form-check-inline">
+                            <select class="form-control" id="bdDay" ng-model="selectBDDay"
+                                ng-options="x for x in optionBDDay">
+                                <option>{{selectBDDay}}</option>
+                            </select>
+                        </div>
+                        <div class="form-check-inline">
+                            <select class="form-control" id="bdMonth" ng-model="selectBDdMonth"
+                                ng-options="x for x in optionBDdMonth">
+                                <option>{{selectBDdMonth}}</option>
+                            </select>
+                        </div>
+                        <div class="form-check-inline">
+                            <select class="form-control" id="bdYear" ng-model="selectBDdYear"
+                                ng-options="x for x in optionBDdYear">
+                                <option>{{selectBDdYear}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col-sm-4 order-md-1 order-sm-1 order-2">
+                        <label for="flyfrom">Passport No.</label>
+                        <input class="form-control" id="passport" ng-model="passport">
+                    </div>
+                    <div class="col-sm-4 order-md-1 order-sm-1 order-2">
+                        <label for="flyfrom">Country</label>
+                        <select class="form-control" id="country" ng-model="selectCountry"
+                            ng-options="x for x in optionCountry">
+                            <option>1</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 order-md-4 order-sm-4 order-1">
+                        <label for="flyto">Passport Expiration Date</label><br>
+                        <div class="form-check-inline">
+                            <select class="form-control" id="passportexDay" ng-model="selectPassportexDay"
+                                ng-options="x for x in optionPassportexDay">
+                                <option>{{selectPassportexDay}}</option>
+                            </select>
+                        </div>
+                        <div class="form-check-inline">
+                            <select class="form-control" id="passportexMonth" ng-model="selectPassportexMonth"
+                                ng-options="x for x in optionPassportexMonth">
+                                <option>{{selectPassportexMonth}}</option>
+                            </select>
+                        </div>
+                        <div class="form-check-inline">
+                            <select class="form-control" id="passportexYear" ng-model="selectPassportexYear"
+                                ng-options="x for x in optionPassportexYear">
+                                <option>{{selectPassportexYear}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3" >
+                <div class="card" style="border-radius: 10px; padding: 5px;">
+                    <div class="card-header">ค่าบริการอื่นๆเพิ่มเติม</div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#flightD" ng-model="flightD">&#8250; Flight: {{flightD}} บาท</a>
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#taxD">&#8250; Tax: {{tax}} บาท</a>
+                            <div id="taxD" class="collapse" style="padding: 15px;">
+                                ราคา
+                            </div>
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#serviceD">&#8250; Service Fee: {{service}} บาท</a>
+                            <div id="serviceD" class="collapse" style="padding: 15px;">
+                                ราคา
+                            </div>
+                            <a href="" class="list-group-item list-group-item-action" data-toggle="collapse"
+                                data-target="#discountD">&#8250; Discount: {{discount}} บาท</a>
+                            <div id="discountD" class="collapse" style="padding: 15px;">
+                                ราคา
+                            </div>
+                            <br>
+                            <div style="text-align: right;">
+                                Total: {{total()}} บาท
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="goToInsurance()">Next</button>
+    </div>
+</body>
